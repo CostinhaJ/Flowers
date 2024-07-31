@@ -15,7 +15,9 @@
 }
 
 :root {
-  --dark-color: #000;
+  --background-color: #000;
+  --background-shade: 85, 0, 255;
+  --shade: 0, 0, 0;
   --flower-Leaf-Gradient_1: #c05858;
   --flower-Leaf-Gradient_2: #7c52ee;
   --flower-Line-Gradient_1: #22830c;
@@ -27,7 +29,7 @@ body {
   align-items: flex-end;
   justify-content: center;
   min-height: 100vh;
-  background-color: var(--dark-color);
+  background-color: var(--background-color);
   overflow: hidden;
   perspective: 1000px;
 }
@@ -40,7 +42,7 @@ body {
   width: 100%;
   height: 100%;
   filter: blur(0.1vmin);
-  background-image: radial-gradient(ellipse at top, transparent 0%, var(--dark-color)), radial-gradient(ellipse at bottom, var(--dark-color), rgba(145, 233, 255, 0.2)), repeating-linear-gradient(220deg, rgb(0, 0, 0) 0px, rgb(0, 0, 0) 19px, transparent 19px, transparent 22px), repeating-linear-gradient(189deg, rgb(0, 0, 0) 0px, rgb(0, 0, 0) 19px, transparent 19px, transparent 22px), repeating-linear-gradient(148deg, rgb(0, 0, 0) 0px, rgb(0, 0, 0) 19px, transparent 19px, transparent 22px), linear-gradient(90deg, rgb(7, 107, 42), rgb(240, 240, 240));
+  background-image: radial-gradient(ellipse at top, transparent 0%, var(--background-color)), radial-gradient(ellipse at bottom, var(--background-color), rgba(var(--background-shade), 0.2)), repeating-linear-gradient(220deg, rgb(0, 0, 0) 0px, rgb(0, 0, 0) 19px, transparent 19px, transparent 22px), repeating-linear-gradient(189deg, rgb(0, 0, 0) 0px, rgb(0, 0, 0) 19px, transparent 19px, transparent 22px), repeating-linear-gradient(148deg, rgb(0, 0, 0) 0px, rgb(0, 0, 0) 19px, transparent 19px, transparent 22px), linear-gradient(90deg, rgb(7, 107, 42), rgb(240, 240, 240));
 }
 
 .flowers {
@@ -270,7 +272,7 @@ body {
   transform: translate(-50%, -100%);
   width: 8vmin;
   height: 8vmin;
-  background-color: #9ff5ff;
+  background-color: #b0babb;
   filter: blur(10vmin);
 }
 .flower__leaf {
@@ -286,25 +288,43 @@ body {
   opacity: 0.9;
   box-shadow: inset 0 0 2vmin rgba(255, 255, 255, 0.5);
 }
+
 .flower__leaf--1 {
   transform: translate(-10%, 1%) rotateY(40deg) rotateX(-50deg);
 }
+
 .flower__leaf--2 {
   transform: translate(-50%, -4%) rotateX(40deg);
 }
+
 .flower__leaf--3 {
   transform: translate(-90%, 0%) rotateY(45deg) rotateX(50deg);
 }
+
 .flower__leaf--4 {
   width: 8vmin;
   height: 8vmin;
   transform-origin: bottom left;
   border-radius: 4vmin 10vmin 4vmin 4vmin;
   transform: translate(0%, 18%) rotateX(70deg) rotate(-43deg);
-  background-image: linear-gradient(to top, var(--flower-Leaf-Gradient_2), var(--flower-Leaf-Gradient_1));
+  background-image: linear-gradient(to top, var(--flower-Leaf-Gradient_1), var(--flower-Leaf-Gradient_2));
   z-index: 1;
   opacity: 0.8;
 }
+
+/* New Leaf 5 */
+.flower__leaf--5 {
+  transform: translate(-70%, -3%) rotateY(-35deg) rotateX(-45deg);
+  opacity: 0.85;
+}
+
+/* New Leaf 6 */
+.flower__leaf--6 {
+  transform: translate(-30%, 3%) rotateY(-35deg) rotateX(45deg);
+  opacity: 0.85;
+}
+
+ /*aqui*/
 .flower__white-circle {
   position: absolute;
   left: -3.5vmin;
@@ -645,7 +665,7 @@ body {
   right: 0%;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(var(--shade), 0.6);
   filter: blur(1.5vmin);
   z-index: 100;
 }
@@ -709,7 +729,7 @@ body {
   height: 50vmin;
   border-top-left-radius: 100%;
   border-left: 2vmin solid #217005;
-  background-image: linear-gradient(to bottom, transparent, var(--dark-color) 60%);
+  background-image: linear-gradient(to bottom, transparent, var(--background-color) 60%);
   -webkit-mask-image: linear-gradient(to top, transparent 30%, #24803e 60%);
 }
 .flower__g-right--1 {
@@ -896,7 +916,7 @@ body {
   height: 10vmin;
   border-radius: 100% 0% 0% 100%/100% 100% 0% 0%;
   box-shadow: inset 0 2px 1vmin hsla(184deg, 97%, 58%, 0.2);
-  background-image: linear-gradient(to bottom left, transparent, var(--dark-color)), linear-gradient(to bottom right, #064f0a 50%, transparent 50%, transparent);
+  background-image: linear-gradient(to bottom left, transparent, var(--background-color)), linear-gradient(to bottom right, #064f0a 50%, transparent 50%, transparent);
   -webkit-mask-image: linear-gradient(to bottom right, #097149 50%, transparent 50%, transparent);
   mask-image: linear-gradient(to bottom right, #0e8723 50%, transparent 50%, transparent);
 }
@@ -942,7 +962,7 @@ body {
   height: 10vmin;
   border-radius: 100% 0% 0% 100%/100% 100% 0% 0%;
   box-shadow: inset 0 2px 1vmin hsla(184deg, 97%, 58%, 0.2);
-  background-image: linear-gradient(to bottom left, transparent, var(--dark-color) 98%), linear-gradient(to bottom right, #106e18 45%, transparent 50%, transparent);
+  background-image: linear-gradient(to bottom left, transparent, var(--background-color) 98%), linear-gradient(to bottom right, #106e18 45%, transparent 50%, transparent);
   -webkit-mask-image: linear-gradient(135deg, #175f22 40%, transparent 50%, transparent);
 }
 .flower__g-fr__leaf--1 {
@@ -1139,7 +1159,7 @@ body {
   height: var(--h);
   border-top-left-radius: 100%;
   border-left: 2vmin solid var(--c);
-  -webkit-mask-image: linear-gradient(to top, transparent 20%, var(--dark-color));
+  -webkit-mask-image: linear-gradient(to top, transparent 20%, var(--background-color));
   transform-origin: bottom center;
 }
 .long-g .leaf--0 {
@@ -1173,7 +1193,18 @@ body {
   -webkit-animation: leaf-ans-3 3s linear infinite;
           animation: leaf-ans-3 3s linear infinite;
 }
-
+.grow-ans {
+  -webkit-animation: grow-ans 2s var(--d) backwards;
+          animation: grow-ans 2s var(--d) backwards;
+}
+.growing-grass {
+  -webkit-animation: growing-grass-ans 1s 2s backwards;
+          animation: growing-grass-ans 1s 2s backwards;
+}
+.container * {
+  -webkit-animation-play-state: paused !important;
+          animation-play-state: paused !important;
+}
 @-webkit-keyframes leaf-ans-1 {
   0%, 100% {
     transform: rotate(-5deg) scale(1);
@@ -1182,7 +1213,6 @@ body {
     transform: rotate(5deg) scale(1.1);
   }
 }
-
 @keyframes leaf-ans-1 {
   0%, 100% {
     transform: rotate(-5deg) scale(1);
@@ -1271,12 +1301,6 @@ body {
     transform: rotate(5deg) scale(1.1);
   }
 }
-
-.grow-ans {
-  -webkit-animation: grow-ans 2s var(--d) backwards;
-          animation: grow-ans 2s var(--d) backwards;
-}
-
 @-webkit-keyframes grow-ans {
   0% {
     transform: scale(0);
@@ -1525,10 +1549,6 @@ body {
     transform: scale(0.5) rotate(79deg) rotateX(10deg) rotateY(-200deg);
   }
 }
-.growing-grass {
-  -webkit-animation: growing-grass-ans 1s 2s backwards;
-          animation: growing-grass-ans 1s 2s backwards;
-}
 
 @-webkit-keyframes growing-grass-ans {
   0% {
@@ -1541,10 +1561,6 @@ body {
     transform: scale(0);
   }
 }
-.container * {
-  -webkit-animation-play-state: paused !important;
-          animation-play-state: paused !important;
-}
     </style>
 </head>
 <body class="container">
@@ -1556,6 +1572,8 @@ body {
           <div class="flower__leaf flower__leaf--2"></div>
           <div class="flower__leaf flower__leaf--3"></div>
           <div class="flower__leaf flower__leaf--4"></div>
+          <div class="flower__leaf flower__leaf--5"></div>
+          <div class="flower__leaf flower__leaf--6"></div>
           <div class="flower__white-circle"></div>
   
           <div class="flower__light flower__light--1"></div>
@@ -1584,6 +1602,8 @@ body {
           <div class="flower__leaf flower__leaf--2"></div>
           <div class="flower__leaf flower__leaf--3"></div>
           <div class="flower__leaf flower__leaf--4"></div>
+          <div class="flower__leaf flower__leaf--5"></div>
+          <div class="flower__leaf flower__leaf--6"></div>
           <div class="flower__white-circle"></div>
   
           <div class="flower__light flower__light--1"></div>
@@ -1610,6 +1630,8 @@ body {
           <div class="flower__leaf flower__leaf--2"></div>
           <div class="flower__leaf flower__leaf--3"></div>
           <div class="flower__leaf flower__leaf--4"></div>
+          <div class="flower__leaf flower__leaf--5"></div>
+          <div class="flower__leaf flower__leaf--6"></div>
           <div class="flower__white-circle"></div>
   
           <div class="flower__light flower__light--1"></div>
@@ -1636,6 +1658,8 @@ body {
           <div class="flower__leaf flower__leaf--2"></div>
           <div class="flower__leaf flower__leaf--3"></div>
           <div class="flower__leaf flower__leaf--4"></div>
+          <div class="flower__leaf flower__leaf--5"></div>
+          <div class="flower__leaf flower__leaf--6"></div>
           <div class="flower__white-circle"></div>
   
           <div class="flower__light flower__light--1"></div>
@@ -1662,6 +1686,8 @@ body {
           <div class="flower__leaf flower__leaf--2"></div>
           <div class="flower__leaf flower__leaf--3"></div>
           <div class="flower__leaf flower__leaf--4"></div>
+          <div class="flower__leaf flower__leaf--5"></div>
+          <div class="flower__leaf flower__leaf--6"></div>
           <div class="flower__white-circle"></div>
   
           <div class="flower__light flower__light--1"></div>
@@ -1688,6 +1714,8 @@ body {
           <div class="flower__leaf flower__leaf--2"></div>
           <div class="flower__leaf flower__leaf--3"></div>
           <div class="flower__leaf flower__leaf--4"></div>
+          <div class="flower__leaf flower__leaf--5"></div>
+          <div class="flower__leaf flower__leaf--6"></div>
           <div class="flower__white-circle"></div>
   
           <div class="flower__light flower__light--1"></div>
